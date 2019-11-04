@@ -28,6 +28,11 @@ def get_data():
     df2 = pd.read_excel('S&P 500.xls')
     return df1, df2
 
-df1, df2 = get_data()
+def get_labels(df):
+    #Convert stock market prices to ups(1) and downs(0) based on the close prices
+    
+    return (df2['Close'].shift(-1) > df2['Close']) * 1
+    
 
-#modfied by Ismail
+#df1, df2 = get_data()
+y = get_labels(df2)
