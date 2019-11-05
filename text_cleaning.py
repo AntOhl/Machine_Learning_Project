@@ -81,8 +81,12 @@ stop_words = stop_words.union(new_words)
 
 # Removing links from tweets
 
-df1["cleantext1"] = df1['text'].str.replace(
-    'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', "")
+#the old code
+#df1["cleantext1"] = df1['text'].str.replace(
+#    'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', "")
+
+r = '(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})'
+df1["cleantext1"] = df1['text'].str.replace(r, '')
 df1["cleantext1"]
 
 
@@ -103,4 +107,23 @@ df1["cleantext3"]
 df1["cleantext4"] = df1["cleantext3"].str.lower()
 df1["cleantext4"]
 
+# 20 most common words after cleaning
 
+freq_common = pd.Series(' '.join(df1['cleantext4']).split()).value_counts()[:20]
+freq_common
+
+
+# 20 less common words after cleaning
+
+freq_uncommon = pd.Series(' '.join(df1['cleantext4']).split()).value_counts()[-20:]
+freq_uncommon
+
+'''
+Ruixu:
+1. Do we need to remove tags all together? @realDonaldTrump for example? 
+If we dont do so we will end up with someting as weird as m_forese. 
+2. We failed to remove links such as www.youtube.com/user/mattressserta (fixed)
+3. We failed to remove punctuations such as '_' probably from hashtags like 'suffolk_sheriff'.
+Do we need to replace '_' with a space then?
+4. What does 'Remove 'RT + source account' from tweets' mean?
+'''
