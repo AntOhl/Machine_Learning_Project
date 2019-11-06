@@ -118,6 +118,24 @@ freq_common
 freq_uncommon = pd.Series(' '.join(df1['cleantext4']).split()).value_counts()[-20:]
 freq_uncommon
 
+# Combine all the tweets into a corpus
+# e.g. corpus = combine_to_corpus(df1['cleantext4'])
+def combine_to_corpus(tweets):
+    return ' | '.join(tweets)
+
+# Split the corpus into individual tweets
+# e.g. series = split_to_tweets(corpus)
+def split_to_tweets(corpus):
+    tweets =  corpus.split(' | ')
+    res = pd.Series(tweets)
+    return res
+
+# Examples:
+corpus = combine_to_corpus(df1['cleantext4'])
+corpus = corpus.upper()
+df1['testtext'] = split_to_tweets(corpus)
+
+
 '''
 Ruixu:
 1. Do we need to remove tags all together? @realDonaldTrump for example? 
