@@ -7,18 +7,19 @@ import nltk
 def get_tweet_data():
     #download and save tweet data
     
-    with open('tweets.json', 'rb') as f: 
+    with open('tweets-to-Nov.json', 'rb') as f: 
         data = json.load(f) 
     
     df = pd.DataFrame(data)
-    df.to_excel('tweets.xls', index=False)
+    df.to_excel('tweets-to-Nov.xls', index=False)
     return df
 
 def get_financial_data():
     #download and save financial data
     
-    df = yf.download("^GSPC", start="2005-01-01", end="2019-10-1")
-    df.to_excel('S&P 500.xls')
+    df = yf.download("^GSPC", start="2018-01-01", end="2019-11-25", interval='60m')
+    df['date'] = df['date'].astype(str)
+    df.to_excel('S&P 500_hour.xls')
     return df
 
 def get_data():
@@ -35,4 +36,4 @@ def get_labels(df):
     
 
 #df1, df2 = get_data()
-y = get_labels(df2)
+#y = get_labels(df2)
