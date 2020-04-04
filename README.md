@@ -1,7 +1,6 @@
 
 # Predicting S&P500 according to Trump’s tweets through NLP
-_Airline customer satisfaction tracker through NLP sentiment analysis from the web_
-_This work is related to __in-class project in Machine-Learning class__ and was done by C. Morand-Duval, R. Chen, I. Zizi and A. Ohleyer._
+_This work is related to __in-class project in Machine-Learning class__ and was done by C. Morand-Duval, R. Chen, I. Zizi and A. Ohleyer._ <br>
 __The detailed report of our project is [here](Report.pdf)__ 
 
 ## CONTEXT
