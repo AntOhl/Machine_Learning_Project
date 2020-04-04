@@ -96,7 +96,7 @@ We have faced several challenges for this approach:
 - The data set is not large enough to know if the models will generalise well to unseen data.
 - Tweet2Vec is more likely to generalize on new data sets.
 
-![Screencast](img/conclusions.png)
+![Screencast](img/conclusions.png =100x50)
 
 ## Limits
 - There are biases in the data as D. Trump’s tweets are written in light of maintaining a certain public image. 
