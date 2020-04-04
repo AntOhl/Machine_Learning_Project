@@ -49,9 +49,6 @@ Joining Data: Innerly join the two data sources. Attention: tweets that are outs
     - Syntactical dependency: Indicates relationships between words in the tweets.
     - High-level Named Entity Recognition (NER) : Pre-trained on Wikipedia to distinguish common words from NE.
 
-![Screencast](img/models_1.png)
-
-
 #### Evaluation
 Accuracy: 
 - 5-fold CV Training Accuracy: 0.973
@@ -96,7 +93,11 @@ We have faced several challenges for this approach:
 - The data set is not large enough to know if the models will generalise well to unseen data.
 - Tweet2Vec is more likely to generalize on new data sets.
 
-![Screencast](img/conclusions.png | height=20)
+#### Results:
+Accuracy:
+- Frequency of Named Entity & Random Forest : 0.584
+- TFIDF & KNN : 0.575
+- Doc2Vec (CBOW) & Logistic Regression : 0.549
 
 ## Limits
 - There are biases in the data as D. Trump’s tweets are written in light of maintaining a certain public image. 
