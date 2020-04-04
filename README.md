@@ -1,5 +1,7 @@
 
 # Predicting S&P500 according to Trump’s tweets through NLP
+_Airline customer satisfaction tracker through NLP sentiment analysis from the web_
+_This work is related to __in-class project in Machine-Learning class__ and was done by C. Morand-Duval, R. Chen, I. Zizi and A. Ohleyer._
 
 ## CONTEXT
 #### Donald Trump’s tweets:
@@ -8,7 +10,7 @@
 
 *Can it be analyzed through machine learning algorithm as NLP in order to see if tweets have an impact on the US stock exchange index ?*
 
-#### Twitter Data:
+#### Twitter Data: 
 - Less than 280 characters
 - Organisation, person and events names are included and the symbol "@" and "#"
 - Emojis
